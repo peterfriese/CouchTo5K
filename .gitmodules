@@ -1,0 +1,6 @@
+[submodule "Vendor/TouchDB-iOS"]
+	path = Vendor/TouchDB-iOS
+	url = git://github.com/couchbaselabs/TouchDB-iOS.git
+[submodule "Vendor/CouchCocoa"]
+	path = Vendor/CouchCocoa
+	url = git://github.com/couchbaselabs/CouchCocoa.git
