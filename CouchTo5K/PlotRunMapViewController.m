@@ -77,18 +77,24 @@
     
     CouchDatabase *database = [[DatabaseAdapter sharedAdapter] database];
     
-    CouchDesignDocument* design = [database designDocumentWithName: @"couch-2-5k"];
+    CouchDesignDocument* design = [database designDocumentWithName: @"couch25k"];
     [design defineViewNamed: @"waypoints_by_run" mapBlock: MAPBLOCK({
         NSString *run = (NSString *)[doc objectForKey:@"run"];
         id time = [doc objectForKey:@"time"];
-        if ([run isEqualToString:runKey]) {
-            emit(time, doc);
-        }
-    }) version: @"1.0"];
+        NSMutableArray *key = [[NSMutableArray alloc] init];
+        [key addObject:run];
+        [key addObject:time];
+        
+        NSLog(@"Mapping waypoints for run %@ at time %@", run, time);
+        emit(key, doc);
+    }) version: @"1.1"];
     
-    CouchLiveQuery *query = [[[database designDocumentWithName: @"couch-2-5k"]
+    CouchLiveQuery *query = [[[database designDocumentWithName: @"couch25k"]
                               queryViewNamed: @"waypoints_by_run"] asLiveQuery];
-    [query setStartKey:self.runKey];
+    
+    [query setStartKey:[NSArray arrayWithObjects:self.runKey, nil]];
+    [query setEndKey:[NSArray arrayWithObjects:self.runKey, @"ZZZ", nil]];
+    
     RESTOperation *fetch = [query start];
     [fetch onCompletion:^{
         BOOL success = fetch.isSuccessful;

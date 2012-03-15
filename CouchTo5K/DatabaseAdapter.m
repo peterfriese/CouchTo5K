@@ -49,7 +49,7 @@ static DatabaseAdapter *sharedInstance;
 - (void)startSync
 {
     if (self.connected) {
-        NSURL *url = [NSURL URLWithString:@"http://peterfriese.local:5984/couch-2-5k-2"];
+        NSURL *url = [NSURL URLWithString:@"http://peterfriese.local:5984/couch25k"];
         NSArray *replications = [self.database replicateWithURL:url exclusively: YES];  
     
         CouchPersistentReplication *from = [replications objectAtIndex:0];

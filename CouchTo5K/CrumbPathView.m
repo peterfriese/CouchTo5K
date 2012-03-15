@@ -83,7 +83,8 @@
     if (path != nil)
     {
         CGContextAddPath(context, path);
-        CGContextSetRGBStrokeColor(context, 0.0f, 0.0f, 1.0f, 0.5f);
+        CGContextSetRGBStrokeColor(context, 0.861f, 0.144f, 0.531f, 0.5f);
+
         CGContextSetLineJoin(context, kCGLineJoinRound);
         CGContextSetLineCap(context, kCGLineCapRound);
         CGContextSetLineWidth(context, lineWidth);

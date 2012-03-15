@@ -30,7 +30,7 @@
     CouchDatabase *database = [[DatabaseAdapter sharedAdapter] database];
     
     // Create a 'view' containing list items sorted by date:
-    CouchDesignDocument* design = [database designDocumentWithName: @"couch-2-5k"];
+    CouchDesignDocument* design = [database designDocumentWithName: @"couch25k"];
     [design 
      defineViewNamed: @"runs" 
      mapBlock: MAPBLOCK({
@@ -44,7 +44,7 @@
     })
      version: @"1.0"];
     
-    CouchLiveQuery* query = [[[database designDocumentWithName: @"couch-2-5k"]
+    CouchLiveQuery* query = [[[database designDocumentWithName: @"couch25k"]
                               queryViewNamed: @"runs"] asLiveQuery];
     [query setGroupLevel:1];
     
