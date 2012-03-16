@@ -4,3 +4,6 @@
 [submodule "Vendor/CouchCocoa"]
 	path = Vendor/CouchCocoa
 	url = git://github.com/couchbaselabs/CouchCocoa.git
+[submodule "Vendor/QuickDialog"]
+	path = Vendor/QuickDialog
+	url = git@github.com:escoz/QuickDialog.git

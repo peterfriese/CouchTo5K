@@ -22,12 +22,25 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CouchTo5K/PlotRunMapViewController.m"
-         timestampString = "353540122.045874"
+         timestampString = "353546823.834451"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "78"
          endingLineNumber = "78"
          landmarkName = "-updateRunFromDB"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Vendor/QuickDialog/sample/LoginController.m"
+         timestampString = "353551553.8188"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "27"
+         endingLineNumber = "27"
+         landmarkName = "-setQuickDialogTableView:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

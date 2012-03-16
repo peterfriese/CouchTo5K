@@ -86,7 +86,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    self.navigationItem.title = @"Run Log";
     [self setupView];
     
     // Uncomment the following line to preserve selection between presentations.

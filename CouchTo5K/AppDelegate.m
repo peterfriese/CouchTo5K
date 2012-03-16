@@ -7,13 +7,13 @@
 //
 
 #import "AppDelegate.h"
+#import <CouchCocoa/CouchCocoa.h>
 #import "RunsTableViewController.h"
 #import "DatabaseAdapter.h"
-#import <CouchCocoa/CouchCocoa.h>
+#import "NewRunViewController.h"
 
 @implementation AppDelegate
 
-@synthesize navigationController = _navigationController;
 @synthesize window = _window;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -29,11 +29,23 @@
     [[DatabaseAdapter sharedAdapter] connect];
     [[DatabaseAdapter sharedAdapter] startSync];
     
-    RunsTableViewController *runsTablewViewController = [[RunsTableViewController alloc] init];
-    runsTablewViewController.title = @"Your runs";
     
-    self.navigationController = [[UINavigationController alloc] initWithRootViewController:runsTablewViewController];
-    self.window.rootViewController = self.navigationController;
+    
+//    UINavigationController *navigation = [QuickDialogController controllerWithNavigationForRoot:root];
+    UINavigationController *newRunNavigationController = [QuickDialogController controllerWithNavigationForRoot:[NewRunViewController createNewRunForm]];
+//    [self presentModalViewController:navigation animated:YES];    
+    
+    // Run Log
+    RunsTableViewController *runsTablewViewController = [[RunsTableViewController alloc] init];
+    UINavigationController *runsNavigationController = [[UINavigationController alloc] initWithRootViewController:runsTablewViewController];
+    runsNavigationController.title = @"Teh Log";
+    
+    
+    // Tab bar
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    [tabBarController setViewControllers:[NSArray arrayWithObjects:newRunNavigationController, runsNavigationController, nil]];
+    
+    self.window.rootViewController = tabBarController;
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
