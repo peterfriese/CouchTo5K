@@ -22,6 +22,8 @@
 + (DatabaseAdapter *)sharedAdapter;
 - (CouchDatabase *)connect;
 - (void)startSync;
+
+- (CouchLiveQuery *)queryRuns;
 - (CouchQuery *)queryWayPointsByRun;
 
 @end

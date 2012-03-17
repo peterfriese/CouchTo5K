@@ -66,6 +66,27 @@ static DatabaseAdapter *sharedInstance;
     return query;
 }
 
+- (CouchLiveQuery *)queryRuns
+{
+    // Create a 'view' containing list items sorted by date:
+    CouchDesignDocument* design = [self.database designDocumentWithName: @"couch25k"];
+    [design defineViewNamed: @"runs" mapBlock: MAPBLOCK({
+        id run = [doc objectForKey:@"run"];
+        if (run) emit(run, nil);
+    })
+    reduceBlock:REDUCEBLOCK({
+        return [NSNumber numberWithInt:values.count];
+    })
+    version: @"1.0"];
+    
+    CouchLiveQuery* query = [[[self.database designDocumentWithName: @"couch25k"]
+                              queryViewNamed: @"runs"] asLiveQuery];
+    [query setGroupLevel:1];    
+    query.descending = YES;    
+    
+    return query;
+}
+
 - (void)startSync
 {
     if (self.connected) {

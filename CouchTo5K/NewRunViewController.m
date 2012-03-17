@@ -57,12 +57,12 @@
     
     QSection *section = [[QSection alloc] init];
     QEntryElement *runnemEntry = [[QEntryElement alloc] initWithTitle:@"Run" 
-                                                          Value:@"" 
+                                                          Value:@"run-peterfriese-1" 
                                                     Placeholder:@"My awesome run"];
     runnemEntry.key = @"runName";
 
     QEntryElement *nameEntry = [[QEntryElement alloc] initWithTitle:@"Your name" 
-                                                              Value:@"" 
+                                                              Value:@"peterfriese" 
                                                         Placeholder:@"John Doe"];
     nameEntry.key = @"runnerName";
     
