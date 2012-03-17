@@ -95,24 +95,35 @@
             }
             previous = location;
         }
-        self.distanceLabel.text = [NSString stringWithFormat:@"%.2d", distance];
+        self.distanceLabel.text = [NSString stringWithFormat:@"%.2f", distance / 1000];
     }
 }
 
 - (IBAction)startStop:(id)sender 
 {
     if (!self.running) {
+        // Update button. Unfortunately, UIBarButtonItems cannot be changed after they have been created, so we
+        // need to create a new button, remnove the old button from the toolbar and place the new one.
         NSMutableArray *items = [NSMutableArray arrayWithArray:[self.toolBar items]];
         UIBarButtonItem *pauseButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPause 
                                                                                    target:self 
                                                                                    action:@selector(startStop:)];        
         [items replaceObjectAtIndex:0 withObject:pauseButton];
         [self.toolBar setItems:items];
-        self.running = YES;
+        
+        // Start receiving location events nd listening to database changes
+        self.running = YES;        
         [self.locationManager startUpdatingLocation];
         [self startLiveQuery];
+        
+        // don't go to sleep
+        [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
+        
+        // Activate proximity sensing
+        [[UIDevice currentDevice] setProximityMonitoringEnabled:YES];
     }
     else {
+        // Update button
         NSMutableArray *items = [NSMutableArray arrayWithArray:[self.toolBar items]];
         UIBarButtonItem *playButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay 
                                                                                      target:self 
@@ -120,9 +131,15 @@
         [items replaceObjectAtIndex:0 withObject:playButton];
         [self.toolBar setItems:items];
         
+        // stop receiving location updates
         [self.locationManager stopUpdatingLocation];
         self.running = NO;
-        [self.startStopButton setStyle:UIBarButtonSystemItemPlay];
+        
+        // sleeping is allowed again
+        [[UIApplication sharedApplication] setIdleTimerDisabled:NO];
+        
+        // Deactivate proximity sensing
+        [[UIDevice currentDevice] setProximityMonitoringEnabled:NO];        
     }
 }
 

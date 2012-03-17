@@ -78,9 +78,12 @@
     
     [query setStartKey:[NSArray arrayWithObjects:self.runKey, nil]];
     [query setEndKey:[NSArray arrayWithObjects:self.runKey, @"ZZZ", nil]];
-    
+
     RESTOperation *fetch = [query start];
     [fetch onCompletion:^{
+        CLLocation *previous = nil;
+        CLLocationDistance distance = 0;
+        
         for (CouchQueryRow *row in query.rows) {
             id waypoint = row.value;
             CLLocationDegrees lat = [[waypoint objectForKey:@"lat"] doubleValue];
@@ -88,7 +91,12 @@
             CLLocation *location = [[CLLocation alloc] initWithLatitude:lat longitude:lon];
             
             [self addNewLocation:location];
+            if (previous) {
+                distance  += [location distanceFromLocation:previous];
+            }
+            previous = location;
         }
+        NSLog(@"Distance covery for run %@: %.2f", self.runKey, distance / 1000);
         
     }];
     
