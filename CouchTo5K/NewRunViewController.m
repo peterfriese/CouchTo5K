@@ -3,10 +3,11 @@
 //  CouchTo5K
 //
 //  Created by Peter Friese on 16.03.12.
-//  Copyright (c) 2012 Zühlke Group. All rights reserved.
+//  Copyright (c) 2012 peterfriese.de. All rights reserved.
 //
 
 #import "NewRunViewController.h"
+#import "ActiveRunViewController.h"
 
 @interface NewRunViewController ()
 
@@ -55,13 +56,23 @@
     root.grouped = YES;
     
     QSection *section = [[QSection alloc] init];
-    QEntryElement *entry = [[QEntryElement alloc] initWithTitle:@"Name" Value:@"" Placeholder:@"My awesome run"];
+    QEntryElement *runnemEntry = [[QEntryElement alloc] initWithTitle:@"Run" 
+                                                          Value:@"" 
+                                                    Placeholder:@"My awesome run"];
+    runnemEntry.key = @"runName";
+
+    QEntryElement *nameEntry = [[QEntryElement alloc] initWithTitle:@"Your name" 
+                                                              Value:@"" 
+                                                        Placeholder:@"John Doe"];
+    nameEntry.key = @"runnerName";
+    
     [root addSection:section];
-    [section addElement:entry];
+    [section addElement:runnemEntry];
+    [section addElement:nameEntry];
     
     QSection *section2 = [[QSection alloc] init];
     QButtonElement *startButton = [[QButtonElement alloc] initWithTitle:@"Start your run"];
-    startButton.controllerAction = @"doStart";
+    startButton.controllerAction = @"onStartRun";
     [root addSection:section2];
     [section2 addElement:startButton];
     
@@ -80,7 +91,13 @@
 
 - (void)QEntryMustReturnForElement:(QEntryElement *)element andCell:(QEntryTableViewCell *)cell {
     NSLog(@"Must return");
+}
+
+- (void)onStartRun {
+    ActiveRunViewController *activeRunController = [[ActiveRunViewController alloc] init];    
+    [self.root fetchValueIntoObject:activeRunController];
     
+    [self presentModalViewController:activeRunController animated:YES];
 }
 
 @end

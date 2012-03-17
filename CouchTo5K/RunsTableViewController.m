@@ -34,12 +34,10 @@
     [design 
      defineViewNamed: @"runs" 
      mapBlock: MAPBLOCK({
-        NSLog(@"Mapping...");        
         id run = [doc objectForKey:@"run"];
         if (run) emit(run, nil);
     })
      reduceBlock:REDUCEBLOCK({
-        NSLog(@"Reducing...");
         return [NSNumber numberWithInt:values.count];
     })
      version: @"1.0"];

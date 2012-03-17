@@ -7,6 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CouchCocoa/CouchCocoa.h>
+#import <CouchCocoa/CouchTouchDBServer.h>
+#import <CouchCocoa/CouchUITableSource.h>
+#import <CouchCocoa/CouchDesignDocument_Embedded.h>
+
 @class CouchDatabase;
 
 @interface DatabaseAdapter : NSObject
@@ -17,5 +22,6 @@
 + (DatabaseAdapter *)sharedAdapter;
 - (CouchDatabase *)connect;
 - (void)startSync;
+- (CouchQuery *)queryWayPointsByRun;
 
 @end

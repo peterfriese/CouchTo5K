@@ -28,6 +28,8 @@
 		88494F71150E567100E877A6 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 88494F70150E567100E877A6 /* libsqlite3.dylib */; };
 		88494F80150EAA5800E877A6 /* RunsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88494F7F150EAA5800E877A6 /* RunsTableViewController.m */; };
 		88494F83150EAC3D00E877A6 /* DatabaseAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 88494F82150EAC3D00E877A6 /* DatabaseAdapter.m */; };
+		88EBCB251513996B000A4192 /* ActiveRunViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EBCB231513996B000A4192 /* ActiveRunViewController.m */; };
+		88EBCB261513996B000A4192 /* ActiveRunViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88EBCB241513996B000A4192 /* ActiveRunViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +88,9 @@
 		88494F7F150EAA5800E877A6 /* RunsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunsTableViewController.m; sourceTree = "<group>"; };
 		88494F81150EAC3C00E877A6 /* DatabaseAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseAdapter.h; sourceTree = "<group>"; };
 		88494F82150EAC3D00E877A6 /* DatabaseAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseAdapter.m; sourceTree = "<group>"; };
+		88EBCB221513996B000A4192 /* ActiveRunViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActiveRunViewController.h; sourceTree = "<group>"; };
+		88EBCB231513996B000A4192 /* ActiveRunViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActiveRunViewController.m; sourceTree = "<group>"; };
+		88EBCB241513996B000A4192 /* ActiveRunViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActiveRunViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +203,7 @@
 		883E0D2B150E450D00B80FA0 /* CouchTo5K */ = {
 			isa = PBXGroup;
 			children = (
+				88EBCB21151398F1000A4192 /* ActiveRun */,
 				882F323B1512B3BF00099635 /* NewRun */,
 				882F323A1512AC7500099635 /* DB */,
 				882F32391512AC5B00099635 /* RunsList */,
@@ -218,6 +224,16 @@
 				883E0D33150E450D00B80FA0 /* CouchTo5K-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		88EBCB21151398F1000A4192 /* ActiveRun */ = {
+			isa = PBXGroup;
+			children = (
+				88EBCB221513996B000A4192 /* ActiveRunViewController.h */,
+				88EBCB231513996B000A4192 /* ActiveRunViewController.m */,
+				88EBCB241513996B000A4192 /* ActiveRunViewController.xib */,
+			);
+			name = ActiveRun;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,6 +313,7 @@
 			files = (
 				883E0D30150E450D00B80FA0 /* InfoPlist.strings in Resources */,
 				880149CB1510F84A00387F1D /* PlotRunMapViewController.xib in Resources */,
+				88EBCB261513996B000A4192 /* ActiveRunViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +332,7 @@
 				880149D9151138F700387F1D /* CrumbPath.m in Sources */,
 				880149DA151138F700387F1D /* CrumbPathView.m in Sources */,
 				882F323F1512B40300099635 /* NewRunViewController.m in Sources */,
+				88EBCB251513996B000A4192 /* ActiveRunViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

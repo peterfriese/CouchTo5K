@@ -74,32 +74,13 @@
 
 - (void)updateRunFromDB
 {
-    
-    CouchDatabase *database = [[DatabaseAdapter sharedAdapter] database];
-    
-    CouchDesignDocument* design = [database designDocumentWithName: @"couch25k"];
-    [design defineViewNamed: @"waypoints_by_run" mapBlock: MAPBLOCK({
-        NSString *run = (NSString *)[doc objectForKey:@"run"];
-        id time = [doc objectForKey:@"time"];
-        NSMutableArray *key = [[NSMutableArray alloc] init];
-        [key addObject:run];
-        [key addObject:time];
-        
-        NSLog(@"Mapping waypoints for run %@ at time %@", run, time);
-        emit(key, doc);
-    }) version: @"1.1"];
-    
-    CouchLiveQuery *query = [[[database designDocumentWithName: @"couch25k"]
-                              queryViewNamed: @"waypoints_by_run"] asLiveQuery];
+    CouchLiveQuery *query = [[[DatabaseAdapter sharedAdapter] queryWayPointsByRun] asLiveQuery];
     
     [query setStartKey:[NSArray arrayWithObjects:self.runKey, nil]];
     [query setEndKey:[NSArray arrayWithObjects:self.runKey, @"ZZZ", nil]];
     
     RESTOperation *fetch = [query start];
     [fetch onCompletion:^{
-        BOOL success = fetch.isSuccessful;
-        NSUInteger rows = [query.rows count];
-        NSLog(@"Aaaaand - we're done. Success: %d, # rows:%d", success, rows);
         for (CouchQueryRow *row in query.rows) {
             id waypoint = row.value;
             CLLocationDegrees lat = [[waypoint objectForKey:@"lat"] doubleValue];
