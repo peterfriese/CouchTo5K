@@ -15,6 +15,15 @@
 		880149DA151138F700387F1D /* CrumbPathView.m in Sources */ = {isa = PBXBuildFile; fileRef = 880149D8151138F700387F1D /* CrumbPathView.m */; };
 		882F323F1512B40300099635 /* NewRunViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 882F323D1512B40300099635 /* NewRunViewController.m */; };
 		882F32501512B7F900099635 /* libQuickDialog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 882F324D1512B7D400099635 /* libQuickDialog.a */; };
+		882F3D471516629F00CB5601 /* RunningScreen-Glass.png in Resources */ = {isa = PBXBuildFile; fileRef = 882F3D451516629F00CB5601 /* RunningScreen-Glass.png */; };
+		882F3D481516629F00CB5601 /* RunningScreen-Screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 882F3D461516629F00CB5601 /* RunningScreen-Screen.png */; };
+		882F3D4A1516699000CB5601 /* RunningScreen-Glass2.png in Resources */ = {isa = PBXBuildFile; fileRef = 882F3D491516699000CB5601 /* RunningScreen-Glass2.png */; };
+		882F3D4C15166BF700CB5601 /* RunningScreen-Glass3.png in Resources */ = {isa = PBXBuildFile; fileRef = 882F3D4B15166BF700CB5601 /* RunningScreen-Glass3.png */; };
+		882F3D4E15166DAC00CB5601 /* RunningScreen-Glass4.png in Resources */ = {isa = PBXBuildFile; fileRef = 882F3D4D15166DAC00CB5601 /* RunningScreen-Glass4.png */; };
+		882F3D5815167E4A00CB5601 /* 63-runner.png in Resources */ = {isa = PBXBuildFile; fileRef = 882F3D5415167E4A00CB5601 /* 63-runner.png */; };
+		882F3D5915167E4A00CB5601 /* 63-runner@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 882F3D5515167E4A00CB5601 /* 63-runner@2x.png */; };
+		882F3D5A15167E4A00CB5601 /* 259-list.png in Resources */ = {isa = PBXBuildFile; fileRef = 882F3D5615167E4A00CB5601 /* 259-list.png */; };
+		882F3D5B15167E4A00CB5601 /* 259-list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 882F3D5715167E4A00CB5601 /* 259-list@2x.png */; };
 		883E0D26150E450D00B80FA0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 883E0D25150E450D00B80FA0 /* UIKit.framework */; };
 		883E0D28150E450D00B80FA0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 883E0D27150E450D00B80FA0 /* Foundation.framework */; };
 		883E0D2A150E450D00B80FA0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 883E0D29150E450D00B80FA0 /* CoreGraphics.framework */; };
@@ -69,6 +78,15 @@
 		882F323C1512B40300099635 /* NewRunViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewRunViewController.h; sourceTree = "<group>"; };
 		882F323D1512B40300099635 /* NewRunViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewRunViewController.m; sourceTree = "<group>"; };
 		882F32411512B7D400099635 /* QuickDialog.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = QuickDialog.xcodeproj; path = Vendor/QuickDialog/QuickDialog.xcodeproj; sourceTree = "<group>"; };
+		882F3D451516629F00CB5601 /* RunningScreen-Glass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RunningScreen-Glass.png"; sourceTree = "<group>"; };
+		882F3D461516629F00CB5601 /* RunningScreen-Screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RunningScreen-Screen.png"; sourceTree = "<group>"; };
+		882F3D491516699000CB5601 /* RunningScreen-Glass2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RunningScreen-Glass2.png"; sourceTree = "<group>"; };
+		882F3D4B15166BF700CB5601 /* RunningScreen-Glass3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RunningScreen-Glass3.png"; sourceTree = "<group>"; };
+		882F3D4D15166DAC00CB5601 /* RunningScreen-Glass4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RunningScreen-Glass4.png"; sourceTree = "<group>"; };
+		882F3D5415167E4A00CB5601 /* 63-runner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "63-runner.png"; sourceTree = "<group>"; };
+		882F3D5515167E4A00CB5601 /* 63-runner@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "63-runner@2x.png"; sourceTree = "<group>"; };
+		882F3D5615167E4A00CB5601 /* 259-list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "259-list.png"; sourceTree = "<group>"; };
+		882F3D5715167E4A00CB5601 /* 259-list@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "259-list@2x.png"; sourceTree = "<group>"; };
 		883E0D21150E450D00B80FA0 /* CouchTo5K.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CouchTo5K.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		883E0D25150E450D00B80FA0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		883E0D27150E450D00B80FA0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -165,11 +183,29 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		882F3D441516629F00CB5601 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				882F3D5415167E4A00CB5601 /* 63-runner.png */,
+				882F3D5515167E4A00CB5601 /* 63-runner@2x.png */,
+				882F3D5615167E4A00CB5601 /* 259-list.png */,
+				882F3D5715167E4A00CB5601 /* 259-list@2x.png */,
+				882F3D4D15166DAC00CB5601 /* RunningScreen-Glass4.png */,
+				882F3D4B15166BF700CB5601 /* RunningScreen-Glass3.png */,
+				882F3D491516699000CB5601 /* RunningScreen-Glass2.png */,
+				882F3D451516629F00CB5601 /* RunningScreen-Glass.png */,
+				882F3D461516629F00CB5601 /* RunningScreen-Screen.png */,
+			);
+			name = Resources;
+			path = CouchTo5K/Resources;
+			sourceTree = "<group>";
+		};
 		883E0D16150E450D00B80FA0 = {
 			isa = PBXGroup;
 			children = (
 				882F32411512B7D400099635 /* QuickDialog.xcodeproj */,
 				883E0D2B150E450D00B80FA0 /* CouchTo5K */,
+				882F3D441516629F00CB5601 /* Resources */,
 				883E0D24150E450D00B80FA0 /* Frameworks */,
 				883E0D22150E450D00B80FA0 /* Products */,
 			);
@@ -314,6 +350,15 @@
 				883E0D30150E450D00B80FA0 /* InfoPlist.strings in Resources */,
 				880149CB1510F84A00387F1D /* PlotRunMapViewController.xib in Resources */,
 				88EBCB261513996B000A4192 /* ActiveRunViewController.xib in Resources */,
+				882F3D471516629F00CB5601 /* RunningScreen-Glass.png in Resources */,
+				882F3D481516629F00CB5601 /* RunningScreen-Screen.png in Resources */,
+				882F3D4A1516699000CB5601 /* RunningScreen-Glass2.png in Resources */,
+				882F3D4C15166BF700CB5601 /* RunningScreen-Glass3.png in Resources */,
+				882F3D4E15166DAC00CB5601 /* RunningScreen-Glass4.png in Resources */,
+				882F3D5815167E4A00CB5601 /* 63-runner.png in Resources */,
+				882F3D5915167E4A00CB5601 /* 63-runner@2x.png in Resources */,
+				882F3D5A15167E4A00CB5601 /* 259-list.png in Resources */,
+				882F3D5B15167E4A00CB5601 /* 259-list@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

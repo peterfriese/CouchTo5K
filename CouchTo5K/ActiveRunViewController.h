@@ -20,6 +20,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *runnameLabel;
 @property (strong, nonatomic) IBOutlet UIToolbar *toolBar;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *startStopButton;
+@property (strong, nonatomic) IBOutlet UIImageView *ledlinesOverlay;
+@property (strong, nonatomic) IBOutlet UIImageView *backgroundImage;
 
 - (IBAction)startStop:(id)sender;
 - (IBAction)finish:(id)sender;

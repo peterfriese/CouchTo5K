@@ -29,17 +29,15 @@
     [[DatabaseAdapter sharedAdapter] connect];
     [[DatabaseAdapter sharedAdapter] startSync];
     
-    
-    
-//    UINavigationController *navigation = [QuickDialogController controllerWithNavigationForRoot:root];
+    // new run view
     UINavigationController *newRunNavigationController = [QuickDialogController controllerWithNavigationForRoot:[NewRunViewController createNewRunForm]];
-//    [self presentModalViewController:navigation animated:YES];    
+    newRunNavigationController.tabBarItem.image = [UIImage imageNamed:@"63-runner.png"];
     
     // Run Log
     RunsTableViewController *runsTablewViewController = [[RunsTableViewController alloc] init];
     UINavigationController *runsNavigationController = [[UINavigationController alloc] initWithRootViewController:runsTablewViewController];
-    runsNavigationController.title = @"Teh Log";
-    
+    runsNavigationController.title = @"Run Log";
+    runsNavigationController.tabBarItem.image = [UIImage imageNamed:@"259-list.png"];
     
     // Tab bar
     UITabBarController *tabBarController = [[UITabBarController alloc] init];

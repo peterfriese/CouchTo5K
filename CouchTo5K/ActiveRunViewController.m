@@ -32,10 +32,14 @@
 @synthesize runnameLabel;
 @synthesize toolBar;
 @synthesize startStopButton;
+@synthesize ledlinesOverlay;
+@synthesize backgroundImage;
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view from its nib.
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
@@ -56,6 +60,8 @@
     [self setRunnameLabel:nil];
     [self setStartStopButton:nil];
     [self setToolBar:nil];
+    [self setLedlinesOverlay:nil];
+    [self setBackgroundImage:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
